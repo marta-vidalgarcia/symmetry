@@ -5,6 +5,7 @@ This R Tool Detects Object Symmetry And Plots Estimated Paired Landmarks
 `library(devtools)`
 
 `install_github("marta-vidalgarcia/symmetry")`
+
 `library(symmetry)`
 
 ***
