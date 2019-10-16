@@ -111,7 +111,7 @@ detect.symmetry <- function(A, sym.plane = "xz", non.sym = NULL, plot = TRUE){
     paired_sym$side.2[which(paired_sym$side.1 == best.pair[[i]])] <- n.dups[i]
   }
   non_sym <- unique(c(non_sym, paired_sym$side.1[which(paired_sym$side.2 == "NA")]))
-  pairedLM <- na.omit(suppressWarnings(transform(paired_sym, side.2 = as.numeric(side.2))))
+  pairedLM <- as.matrix(na.omit(suppressWarnings(transform(paired_sym, side.2 = as.numeric(side.2)))))
   side.1 <-pairedLM$side.1
   side.2 <-pairedLM$side.2
   plot.symmetry(A, sym.pairs = pairedLM, sym.plane)
