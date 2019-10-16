@@ -114,7 +114,7 @@ detect.symmetry <- function(A, sym.plane = "xz", non.sym = NULL, plot = TRUE){
   pairedLM <- na.omit(suppressWarnings(transform(paired_sym, side.2 = as.numeric(side.2))))
   side.1 <-pairedLM$side.1
   side.2 <-pairedLM$side.2
-  plot.sym(A, sym.pairs = pairedLM, sym.plane)
+  plot.symmetry(A, sym.pairs = pairedLM, sym.plane)
   return(list("side.1" = side.1, "side.2" = side.2, "pairedLM" = pairedLM))
 }
 
