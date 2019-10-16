@@ -33,7 +33,7 @@
 #' @export
 
 
-plot.symmetry <- function(A, sym.pairs, sym.plane = NULL){
+plot.sym <- function(A, sym.pairs, sym.plane = NULL){
   specimen_m <- as.data.frame(geomorph::mshape(geomorph::gpagen(A, print.progress = FALSE)$coords))
   side.1 <- sym.pairs[,1]
   side.2 <- sym.pairs[,2]
