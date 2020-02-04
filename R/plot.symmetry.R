@@ -34,7 +34,7 @@
 
 
 plot.symmetry <- function(A, sym.pairs, sym.plane = NULL){
-  specimen_m <- as.data.frame(geomorph::mshape(geomorph::gpagen(A, print.progress = FALSE)$coords))
+  specimen_m <- as.data.frame(geomorph:::mshape(geomorph::gpagen(A, print.progress = FALSE)$coords))
   side.1 <- sym.pairs[,1]
   side.2 <- sym.pairs[,2]
   pairs <- c(side.1, side.2)
@@ -45,7 +45,7 @@ plot.symmetry <- function(A, sym.pairs, sym.plane = NULL){
          xlab = "x", ylab = "y", zlab = "z")
   plot3d(x = specimen_m[diff,1], y = specimen_m[diff,2], z = specimen_m[diff,3], col = "black", type="s", aspect = 'iso', size=0.6, add = TRUE,
          xlab = "x", ylab = "y", zlab = "z")
-  text3d(specimen_m[,1], specimen_m[,2], specimen_m[,3], texts = paste(1:(dim(specimen_m)[1])), adj=1.5, pos=5)
+  text3d(specimen_m[,1], specimen_m[,2], specimen_m[,3], texts = paste(1:(dim(specimen_m)[1])), adj=1.5)
   if (!is.null(sym.plane)) {
       if (sym.plane == "xz"){
         planes3d(a=0,b=1,c=0,d=0, alpha=0.2, col="gray") # xz-plane
