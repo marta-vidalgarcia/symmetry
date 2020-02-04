@@ -30,7 +30,7 @@
 
 detect.symmetry <- function(A, sym.plane = "xz", non.sym = NULL, plot = TRUE){
   if (sym.plane == "xz"){
-    specimen_m <- as.data.frame(mshape(gpagen(A, print.progress = FALSE)$coords)) # estimate the mean shape
+    specimen_m <- as.data.frame(geomorph:::mshape(geomorph::gpagen(A, print.progress = FALSE)$coords)) # estimate the mean shape
     specimen_refl <- data.frame(specimen_m[,1], specimen_m[,2][sapply(specimen_m[,2], is.numeric)] * -1, specimen_m[,3])
     side.1 <- which(specimen_m[,2] < 0)
     side.2 <- as.integer(setdiff(row.names(specimen_m), side.1))
